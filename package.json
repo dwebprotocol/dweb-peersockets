@@ -1,30 +1,30 @@
 {
-  "name": "peersockets",
+  "name": "dweb-peersockets",
   "version": "1.0.0",
-  "description": "Directly connect to peers via hyperswarm (or an API-compatible alternative). ",
+  "description": "Directly connect to dWeb peers over sockets.",
   "main": "index.js",
   "scripts": {
     "test": "tape test/*.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/andrewosh/peersockets.git"
+    "url": "https://github.com/dwebprotocol/dweb-peersockets.git"
   },
   "keywords": [
-    "hyperswarm",
+    "dswarm",
     "sockets"
   ],
-  "author": "Andrew Osheroff <andrewosh@gmail.com>",
+  "author": "PeepsLabs <peepslabs@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/andrewosh/peersockets/issues"
+    "url": "https://github.com/dwebprotocol/dweb-peersockets/issues"
   },
-  "homepage": "https://github.com/andrewosh/peersockets#readme",
+  "homepage": "https://dwebx.org",
   "devDependencies": {
-    "@dwebvault/networker": "^1.0.0",
-    "@hyperswarm/dht": "^3.5.2",
-    "dwebvault": "^1.0.0",
-    "hypercore-crypto": "^2.0.0",
+    "@basestore/networker": "^1.0.0",
+    "@dswarm/dht": "^1.0.0",
+    "basestore": "^1.0.0",
+    "@ddatabase/crypto": "^1.0.0",
     "random-access-memory": "^3.1.1",
     "standard": "^14.3.3",
     "tape": "^4.13.2"
