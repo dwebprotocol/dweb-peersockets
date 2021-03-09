@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/dwebprotocol/dweb-peersockets.git"
+    "url": "git+https://github.com/dwebprotocol/dweb-peersockets.git"
   },
   "keywords": [
     "dswarm",
@@ -21,9 +21,9 @@
   },
   "homepage": "https://dwebx.org",
   "devDependencies": {
-    "@basestore/networker": "^1.0.0",
+    "@basestore/networker": "1.0.1",
     "@dswarm/dht": "^1.0.0",
-    "basestore": "^1.0.0",
+    "basestorevault": "^1.0.1",
     "@ddatabase/crypto": "^1.0.0",
     "random-access-memory": "^3.1.1",
     "standard": "^14.3.3",

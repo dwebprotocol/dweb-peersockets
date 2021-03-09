@@ -1,10 +1,10 @@
 const test = require('tape')
-const dht = require('@hyperswarm/dht')
+const dht = require('@dswarm/dht')
 const ram = require('random-access-memory')
-const hypercoreCrypto = require('hypercore-crypto')
-const CorestoreNetworker = require('@corestore/networker')
-const HypercoreProtocol = require('hypercore-protocol')
-const Corestore = require('corestore')
+const hypercoreCrypto = require('@ddatabase/crypto')
+const CorestoreNetworker = require('@basestore/networker')
+const HypercoreProtocol = require('@ddatabase/protocol')
+const Corestore = require('basestorevault')
 
 const Peersockets = require('..')
 
