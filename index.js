@@ -55,7 +55,7 @@ class Peersockets extends EventEmitter {
   constructor (networker) {
     super()
     this.networker = networker
-    this.basestorevault = networker.basestorevault
+    this.basestorex = networker.basestorex
 
     this.topicsByName = new Map()
   }
