@@ -12,7 +12,7 @@ If you've already been using peersockets v0, take a look at [`UPGRADE.md`](https
 
 ### Installation
 ```
-npm i peersockets --save
+npm i dweb-peersockets --save
 ```
 ### Example
 This example assumes you already have Networker ([`@basestorex/networker`](https://github.com/andrewosh/basestore-swarm-networking)) instance.
