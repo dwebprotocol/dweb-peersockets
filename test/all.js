@@ -1,10 +1,10 @@
 const test = require('tape')
 const dht = require('@dswarm/dht')
 const ram = require('random-access-memory')
-const hypercoreCrypto = require('@ddatabase/crypto')
-const CorestoreNetworker = require('@basestorex/networker')
-const HypercoreProtocol = require('@ddatabase/protocol')
-const Corestore = require('basestorex')
+const ddatabaseCrypto = require('@ddatabase/crypto')
+const BasestoreNetworker = require('@basestore/networker')
+const DDatabaseProtocol = require('@ddatabase/protocol')
+const Basestore = require('basestorex')
 
 const Peersockets = require('..')
 
@@ -18,7 +18,7 @@ test('static peers, single peer send', async t => {
   const ps2 = new Peersockets(networker2)
   const topic = 'test-topic-1'
 
-  const dkey = hypercoreCrypto.randomBytes(32)
+  const dkey = ddatabaseCrypto.randomBytes(32)
   await networker1.configure(dkey, { announce: true, lookup: true })
 
   const handle1 = ps1.join(topic)
@@ -54,7 +54,7 @@ test('static peers, multiple topics bidirectional send', async t => {
   const ps1Key = networker1.keyPair.publicKey
   const ps2Key = networker2.keyPair.publicKey
 
-  const sharedKey = hypercoreCrypto.randomBytes(32)
+  const sharedKey = ddatabaseCrypto.randomBytes(32)
   const topic1 = 'test-topic-1'
   const topic2 = 'test-topic-2'
 
@@ -105,7 +105,7 @@ test('dynamic peer, single peer send', async t => {
   const ps2 = new Peersockets(networker2)
   let seen = 0
 
-  const sharedKey = hypercoreCrypto.randomBytes(32)
+  const sharedKey = ddatabaseCrypto.randomBytes(32)
   const topic = 'test-topic-1'
 
   await networker1.configure(sharedKey, { announce: true, lookup: true })
@@ -135,7 +135,7 @@ test('can close a topic handle without closing the topic', async t => {
   const ps2 = new Peersockets(networker2)
   let seen = 0
 
-  const sharedKey = hypercoreCrypto.randomBytes(32)
+  const sharedKey = ddatabaseCrypto.randomBytes(32)
   const topic = 'test-topic-1'
 
   await networker1.configure(sharedKey, { announce: true, lookup: true })
@@ -168,7 +168,7 @@ test('leaving a topic removes the extension', async t => {
   const ps1 = new Peersockets(networker1)
   const ps2 = new Peersockets(networker2)
 
-  const sharedKey = hypercoreCrypto.randomBytes(32)
+  const sharedKey = ddatabaseCrypto.randomBytes(32)
   const topic = 'test-topic-1'
   await networker1.configure(sharedKey, { announce: true, lookup: true })
   await networker2.configure(sharedKey, { announce: true, lookup: true })
@@ -206,7 +206,7 @@ test('connections persist across deduplication events', async t => {
   let ps2Seen = 0
   let ps3Seen = 0
 
-  const dkey = hypercoreCrypto.randomBytes(32)
+  const dkey = ddatabaseCrypto.randomBytes(32)
 
   await networker1.configure(dkey, { announce: true, lookup: true })
   await networker2.configure(dkey, { announce: true, lookup: true })
@@ -269,9 +269,9 @@ async function create (opts = {}) {
       return bootstrap.once('listening', resolve)
     })
   }
-  const store =  new Corestore(ram)
+  const store =  new Basestore(ram)
   await store.ready()
-  const networker = new CorestoreNetworker(store,  { ...opts, bootstrap: `localhost:${BOOTSTRAP_PORT}` })
+  const networker = new BasestoreNetworker(store,  { ...opts, bootstrap: `localhost:${BOOTSTRAP_PORT}` })
   return { store, networker }
 }
 

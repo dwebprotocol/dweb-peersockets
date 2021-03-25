@@ -3,7 +3,7 @@
 
 __Warning__: Extension messages are currently not MAC'd, so we can't detect tampering. This is still experimental!
 
-Peersockets is a lightweight wrapper around [`@basestorex/networker`](https://github.com/andrewosh/basestorex-networker) that lets you exchange topic-tagged messages with peers over [`@ddatabase/protocol`](https://github.com/mafintosh/@ddatabase/protocol) streams.
+Peersockets is a lightweight wrapper around [`@basestorex/networker`](https://github.com/andrewosh/basestore-networker) that lets you exchange topic-tagged messages with peers over [`@ddatabase/protocol`](https://github.com/mafintosh/@ddatabase/protocol) streams.
 
 To use a Peersocket, you first join a topic -- under the hood, this will register a topic-specific extension on every current peer connection in your networker. By defining topics at the extension level, Peersockets does not need to do any extra encoding/decoding. Once you've created a topic, you can send messages to peers by their NOISE keys. If the remote peer has also joined the topic, they will receive the message.
 
@@ -15,7 +15,7 @@ If you've already been using peersockets v0, take a look at [`UPGRADE.md`](https
 npm i peersockets --save
 ```
 ### Example
-This example assumes you already have Networker ([`@basestorex/networker`](https://github.com/andrewosh/basestorex-swarm-networking)) instance.
+This example assumes you already have Networker ([`@basestorex/networker`](https://github.com/andrewosh/basestore-swarm-networking)) instance.
 ```
 const networker = (my swarm networker)
 const sockets = new Peersockets(networker)
@@ -36,7 +36,7 @@ handle.send('hello!', friendPeer)
 #### `const socket = new Peersockets(networker)`
 Creates a new Peersockets instance. 
 
-* `networker` is an instance of [`@basestorex/networker`](https://github.com/andrewosh/basestorex-networker)).
+* `networker` is an instance of [`@basestorex/networker`](https://github.com/andrewosh/basestore-networker)).
 
 #### `const handler = socket.join(topicName, opts = { onmessage, onclose })`
 Joins a new topic. If this is the first time the topic has been joined, a topic extension will be registered on every connected peer. Otherwise the previous topic/extension will be reused.
