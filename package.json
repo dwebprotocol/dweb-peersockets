@@ -1,6 +1,6 @@
 {
   "name": "dweb-peersockets",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Directly connect to dWeb peers over sockets.",
   "main": "index.js",
   "scripts": {
@@ -21,7 +21,7 @@
   },
   "homepage": "https://dwebx.org",
   "devDependencies": {
-    "@basestore/networker": "1.0.1",
+    "@basestore/networker": "^1.0.2",
     "@dswarm/dht": "^1.0.0",
     "basestorex": "^1.0.0",
     "@ddatabase/crypto": "^1.0.0",
